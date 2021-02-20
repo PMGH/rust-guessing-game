@@ -14,7 +14,7 @@ fn main() {
 
     // {} is a placeholder that is interpolated into
     // println!("Multiple example: {}, {}, {}", x, y, z)
-    println!("The secret number is {}", secret_number);
+    // println!("The secret number is {}", secret_number);
 
     // infinite loop
     loop {
@@ -31,7 +31,11 @@ fn main() {
 
         // set guess to an unsigned 32 bit integer
         // remove whitespace with trim and attempt to convert string to u32 integer
-        let guess: u32 = guess.trim().parse().expect("Please tpe a number!");
+        // error handling: ask for another guess if a non-number is entered
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("You guessed {}", guess);
 
