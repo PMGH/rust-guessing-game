@@ -33,6 +33,11 @@ rustup doc
 
 Or visit https://doc.rust-lang.org/
 
+View documentation for project (including dependencies)
+```shell
+cargo doc --open
+```
+
 ### Cargo project
 
 The guessing_game example from https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
